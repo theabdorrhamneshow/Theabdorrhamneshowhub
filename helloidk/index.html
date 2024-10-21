@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter-like Post Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fa;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .post-box {
+            width: 50%;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid #e1e8ed;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 90%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #e1e8ed;
+            border-radius: 5px;
+            resize: none;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:disabled {
+            background-color: #b4d9f2;
+        }
+
+        .tweets {
+            margin-top: 20px;
+            width: 50%;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .tweet {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #e1e8ed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="post-box">
+        <h2>What's happening?</h2>
+        <textarea id="tweet-input" placeholder="Type your message..."></textarea><br>
+        <button id="tweet-btn" disabled>Tweet</button>
+    </div>
+
+    <div class="tweets" id="tweets-container">
+        <!-- Tweets will appear here -->
+    </div>
+
+    <script>
+        const tweetInput = document.getElementById('tweet-input');
+        const tweetButton = document.getElementById('tweet-btn');
+        const tweetsContainer = document.getElementById('tweets-container');
+
+        // Enable or disable the "Tweet" button based on input
+        tweetInput.addEventListener('input', function () {
+            if (tweetInput.value.trim() === "") {
+                tweetButton.disabled = true;
+            } else {
+                tweetButton.disabled = false;
+            }
+        });
+
+        // Post the tweet when the "Tweet" button is clicked
+        tweetButton.addEventListener('click', function () {
+            const tweetText = tweetInput.value.trim();
+
+            // Create a new tweet div
+            const newTweet = document.createElement('div');
+            newTweet.classList.add('tweet');
+            newTweet.textContent = tweetText;
+
+            // Add the tweet to the container
+            tweetsContainer.prepend(newTweet);
+
+            // Clear the textarea and disable the button
+            tweetInput.value = '';
+            tweetButton.disabled = true;
+        });
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fa;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* New profile settings button style */
+        .profile-settings-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .profile-settings-btn:hover {
+            background-color: #0c83d4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Profile Settings Button -->
+    <a href="profilesetting.html">
+        <button class="profile-settings-btn">Profile Settings</button>
+    </a>
+
+</body>
+</html>
+<body>
+    <div class="profile">
+        <img src="profile-image-url.jpg" alt="Profile Image"> <!-- User's Profile Image -->
+        <span class="username">Username</span> <!-- User's Username -->
+    </div>
+    <!-- Other content of your index page -->
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .profile {
+            position: absolute; /* Position the profile section absolutely */
+            top: 10px; /* Distance from the top */
+            left: 10px; /* Distance from the left */
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(240, 240, 240, 0.8); /* Light grey background with transparency */
+            border-radius: 5px; /* Slightly rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+        .profile img {
+            border-radius: 50%; /* Circular image */
+            width: 50px; /* Image width */
+            height: 50px; /* Image height */
+            margin-right: 10px; /* Space between image and username */
+        }
+        .profile .username {
+            font-size: 20px; /* Username font size */
+            font-weight: bold; /* Bold username */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile">
+        <img src="profile-image-url.jpg" alt="Profile Image"> <!-- Replace with actual image URL -->
+        <span class="username">Username</span> <!-- Replace with actual username -->
+    </div>
+
+    <!-- Main content of your page goes here -->
+
+</body>
+</html>
